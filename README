@@ -1,0 +1,8 @@
+# Получает токен яндекс музыки и сохраняет его в token.txt
+
+
+1. Склонироровать репозиторий
+2. python.exe -m venv .venv
+3. .\.venv\Scripts\activate
+3. pip install -r requirements.txt
+4. Запустить main.py
