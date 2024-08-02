@@ -97,7 +97,7 @@ class GetToken:
                 if content:
                     print(f"Токен успешно записан в файл {self.token_file_path}")
                 else:
-                    print(f"Файл существует {self.token_file_path}, но его содержимое пустое.")
+                    print(f"Файл {self.token_file_path} существует, но его содержимое пустое.")
         except FileNotFoundError:
             print(f"Файл {self.token_file_path} не найден.")
 
