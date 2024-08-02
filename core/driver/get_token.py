@@ -91,4 +91,7 @@ class GetToken:
     def _write_token(self) -> None:
         """ ## Записывает токен в файл ил печатает в консоль если токен = None """
         with open(self.token_file_path, 'w', encoding='UTF-8') as tfile:
-            tfile.write(self.token) if self.token else print('Токен не найден')
+            if self.token:
+                tfile.write(self.token)
+                return
+            print(f'Токен не записался,т.к. self.token: {type(self.token)}')
