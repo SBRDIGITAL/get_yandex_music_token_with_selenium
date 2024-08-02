@@ -33,6 +33,7 @@ class GetToken:
         self._get_token()
         self._close_driver()
         self._write_token()
+        self._check_write_token()
 
 
     def _open_url(self) -> None:
@@ -88,10 +89,21 @@ class GetToken:
         if self.driver:
             self.driver.close()
 
+    def _check_write_token(self) -> None:
+        """ ## Проверяет, что в файл что-то записалось """
+        try:
+            with open(self.token_file_path, 'r', encoding='UTF-8') as tfile:
+                content = tfile.read()
+                if content:
+                    print(f"Токен успешно записан в файл {self.token_file_path}")
+                else:
+                    print(f"Файл существует {self.token_file_path}, но его содержимое пустое.")
+        except FileNotFoundError:
+            print(f"Файл {self.token_file_path} не найден.")
+
     def _write_token(self) -> None:
         """ ## Записывает токен в файл ил печатает в консоль если токен = None """
         with open(self.token_file_path, 'w', encoding='UTF-8') as tfile:
             if self.token:
                 tfile.write(self.token)
                 return
-            print(f'Токен не записался,т.к. self.token: {type(self.token)}')
