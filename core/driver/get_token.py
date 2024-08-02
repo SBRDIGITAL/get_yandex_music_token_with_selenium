@@ -13,7 +13,7 @@ from core.driver.get_driver import MyDriver
 @dataclass
 class GetToken:
     """
-    ## Получает токен яндекс музыки после авторизации
+    ## Получает токен яндекс музыки после авторизации и сохраняет его в self.token_file_path
 
     ### Пример использования:
         if __name__ == "__main__":
