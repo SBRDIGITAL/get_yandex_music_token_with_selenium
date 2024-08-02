@@ -42,5 +42,5 @@ class MyDriver:
         
     @property
     def get_driver(self) -> Chrome:
-        """ ## Публичный метод - возвращает объект браузера """
+        """ ## Публичное свойство - возвращает объект браузера """
         return self.driver
