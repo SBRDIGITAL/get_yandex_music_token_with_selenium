@@ -106,4 +106,3 @@ class GetToken:
         with open(self.token_file_path, 'w', encoding='UTF-8') as tfile:
             if self.token:
                 tfile.write(self.token)
-                return
