@@ -1,4 +1,4 @@
-from core.driver.get_driver import GetToken
+from core.driver.get_token import GetToken
 
 
 
