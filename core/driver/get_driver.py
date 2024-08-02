@@ -25,14 +25,14 @@ class MyDriver:
         """ ## Методы, которые выполняются после инициализации класса """
         self._setting_driver()
         self._get_driver()
-        self.__maximize_window()
+        self._maximize_window()
 
     def _setting_driver(self) -> None:
         """ ## Настройка перед запуском """
         self.capabilities = DesiredCapabilities.CHROME.copy()
         self.options.set_capability(name='goog:loggingPrefs', value={'performance': 'ALL'})
 
-    def __maximize_window(self) -> None:
+    def _maximize_window(self) -> None:
         """ ## Разворачивает окно на весь экран """
         self.driver.maximize_window()
 
